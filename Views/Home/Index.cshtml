@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Bienvenido</h2>
+                <p>
+                    Innovando las transacciones en línea, ponemos a su disposición el cajero ATM online
+                    donde podrá realizar sus pagos y transferencias en línea de una forma rápida y fácil
+                    siempre con la calidad y la confianza que nos caracterizan. Realice sus transacciones
+                    desde la comodidad de su hogar las 24 horas del día los 7 días de la semana.
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6">
+                <form asp-controller="transaccion" asp-action="" method="post">
+
+                </form>
+               
+                
+                    <div class="form-group">
+                        @Html.Label("sNumeroTarjeta", "Tarjeta #:", new { @class = "control-label" })
+                        @Html.Editor("sNumeroTarjeta", new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("sNumeroPIN", "PIN:", new { @class = "control-label" })
+                        @Html.Editor("sNumeroPIN", new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" id="btnEntrar" class="btn btn-primary">
+                            Ingresar
+                        </button>
+                    </div>
+                    <div class="form-group text-center">
+                        <label class="text-danger">@ViewBag.Error</label>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

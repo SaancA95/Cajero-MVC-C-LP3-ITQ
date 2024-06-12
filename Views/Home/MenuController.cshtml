@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Menu";
+}
+<article class="middle">
+    <h2>Bienvenido</h2>
+    Innovando las transacciones en línea, ponemos a su disposición el cajero ATM online
+    donde podrá realizar sus pagos y transferencias en línea de una forma rápida y fácil
+    siempre con la calidad y la confianza que nos caracterizan. Realice sus transacciones
+    desde la comodidad de su hogar las 24 horas del día los 7 días de la semana.
+</article>
+<nav class="right">
+    <ul>
+        <li>
+            @Html.ActionLink("Transferencias nacionales", "Nacionales", "Nacionales", new
+                {
+                    sNumeroTarjeta = ViewBag.sNumeroTarjeta,
+                    sSaldo = ViewBag.sSaldo
+                }, null)
+        </li>
+        <li>
+            @Html.ActionLink("Transferencias internacionales", "Menuopcion", "Home", new
+                {
+                    opcion = 2
+                }, null)
+        </li>
+        <li>
+            @Html.ActionLink("Pagos de Servicios", "Menuopcion", "Home", new { opcion = 3 },
+                     null)
+        </li>
+        <li>
+            @Html.ActionLink("Verificar saldos", "Menuopcion", "Home", new { opcion = 4 },
+                     null)
+        </li>
+    </ul>
+</nav>
